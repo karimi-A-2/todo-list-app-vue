@@ -1,12 +1,27 @@
 <template>
   <header>
-    <h1>Task Tracker</h1>
+    <h1>{{title}}</h1>
   </header>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+// method 1: using array ==>
+//   props: ['title'],
+
+// method 2: using object with title and type 
+//   props: {
+//     title: String,
+//   },
+
+// method 3: also specifying default value
+  props: {
+    title: {
+        tyepe: String,
+        default: 'Hello World',
+    },
+  },
 };
 </script>
 
