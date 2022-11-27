@@ -2,8 +2,6 @@
     <header>
         <h1>{{ title }}</h1>
         <Button text="Add Task" color="green"></Button>
-        <Button text="Update Task" color="blue"></Button>
-        <Button text="Delete Task" color="red"></Button>
     </header>
 </template>
 
