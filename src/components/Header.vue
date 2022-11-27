@@ -1,35 +1,34 @@
 <template>
-  <header>
-    <h1>{{title}}</h1>
-  </header>
+    <header>
+        <h1>{{ title }}</h1>
+        <Button text="Add Task" color="green"></Button>
+        <Button text="Update Task" color="blue"></Button>
+        <Button text="Delete Task" color="red"></Button>
+    </header>
 </template>
 
 <script>
+import Button from "./Button";
+
 export default {
-  name: "Header",
-// method 1: using array ==>
-//   props: ['title'],
-
-// method 2: using object with title and type 
-//   props: {
-//     title: String,
-//   },
-
-// method 3: also specifying default value
-  props: {
-    title: {
-        tyepe: String,
-        default: 'Hello World',
+    name: "Header",
+    props: {
+        title: {
+            tyepe: String,
+            default: "Hello World"
+        }
     },
-  },
+    components: {
+        Button
+    }
 };
 </script>
 
 <style scoped>
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 </style>
