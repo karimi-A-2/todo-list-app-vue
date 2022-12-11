@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Header title="Task Tracker" />
-        <AddTask />
+        <AddTask @add-task="addTask" />
         <Tasks
             :tasks="tasks"
             @delete-task="deleteTask"
@@ -28,6 +28,9 @@ export default {
         };
     },
     methods: {
+        addTask(newTask) {
+            this.tasks = [...this.tasks, newTask];
+        },
         deleteTask(id) {
             this.tasks = this.tasks.filter((task) => task.id !== id);
         },
