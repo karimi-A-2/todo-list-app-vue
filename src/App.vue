@@ -1,7 +1,10 @@
 <template>
     <div class="container">
         <Header title="Task Tracker" />
-        <Tasks :tasks="tasks" @delete-task="deleteTask"/>
+        <Tasks
+            :tasks="tasks"
+            @delete-task="deleteTask"
+        />
     </div>
 </template>
 
@@ -22,8 +25,8 @@ export default {
     },
     methods: {
         deleteTask(id) {
-            console.log('task', id);
-        }
+            console.log("task", id);
+        },
     },
     created() {
         // this is where we fetch data from api
