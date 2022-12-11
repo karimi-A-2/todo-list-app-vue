@@ -2,8 +2,9 @@
     <header>
         <h1>{{ title }}</h1>
         <Button
-            text="Add Task"
-            color="green"
+            :text="isAddTask ? 'Add Task' : 'Close'"
+            :color="isAddTask ? 'green' : 'red'"
+            @btn-click="$emit('toggle-add-task')"
         />
     </header>
 </template>
@@ -17,10 +18,15 @@ export default {
             tyepe: String,
             default: "Hello World",
         },
+        isAddTask: {
+            tyepe: Boolean,
+            default: true,
+        },
     },
     components: {
         Button,
     },
+    emits: ["toggle-add-task"],
 };
 </script>
 

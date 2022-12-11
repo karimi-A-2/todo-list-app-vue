@@ -1,7 +1,13 @@
 <template>
     <div class="container">
-        <Header title="Task Tracker" />
-        <AddTask @add-task="addTask" />
+        <Header
+            title="Task Tracker"
+            :isAddTask="!showAddTask"
+            @toggle-add-task="toggleAddTask"
+        />
+        <div v-show="showAddTask">
+            <AddTask @add-task="addTask" />
+        </div>
         <Tasks
             :tasks="tasks"
             @delete-task="deleteTask"
@@ -27,9 +33,13 @@ export default {
     data() {
         return {
             tasks: [],
+            showAddTask: false,
         };
     },
     methods: {
+        toggleAddTask() {
+            this.showAddTask = !this.showAddTask;
+        },
         addTask(newTask) {
             newTask.id = index++;
             this.tasks.push(newTask);
@@ -44,7 +54,6 @@ export default {
         },
     },
     created() {
-        // this is where we fetch data from api
         this.tasks = [
             {
                 id: index++,
