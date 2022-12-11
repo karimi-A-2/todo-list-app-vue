@@ -15,6 +15,8 @@ import Header from "./components/Header.vue";
 import Tasks from "./components/Tasks.vue";
 import AddTask from "./components/AddTask.vue";
 
+let index = 0;
+
 export default {
     name: "App",
     components: {
@@ -29,7 +31,8 @@ export default {
     },
     methods: {
         addTask(newTask) {
-            this.tasks = [...this.tasks, newTask];
+            newTask.id = index++;
+            this.tasks.push(newTask);
         },
         deleteTask(id) {
             this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -44,19 +47,19 @@ export default {
         // this is where we fetch data from api
         this.tasks = [
             {
-                id: "1",
+                id: index++,
                 text: "Doctors Appointment",
                 day: "March 5th at 2:30pm",
                 reminder: true,
             },
             {
-                id: "2",
+                id: index++,
                 text: "Meeting with boss",
                 day: "March 6th at 1:30pm",
                 reminder: true,
             },
             {
-                id: "3",
+                id: index++,
                 text: "Food shopping",
                 day: "March 7th at 2:00pm",
                 reminder: false,
