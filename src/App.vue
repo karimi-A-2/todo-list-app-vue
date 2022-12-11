@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <Header title="Task Tracker"></Header>
-        <Tasks :tasks="tasks"></Tasks>
+        <Header title="Task Tracker" />
+        <Tasks :tasks="tasks" />
     </div>
 </template>
 

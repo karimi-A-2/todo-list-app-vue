@@ -4,7 +4,7 @@
         <Button
             text="Add Task"
             color="green"
-        ></Button>
+        />
     </header>
 </template>
 
