@@ -6,6 +6,7 @@
         <Task
             :task="task"
             @delete-task="$emit('delete-task', task.id)"
+            @toggle-task="$emit('toggle-task', task.id)"
         />
     </div>
 </template>
@@ -21,7 +22,7 @@ export default {
     components: {
         Task,
     },
-    emits: ["delete-task"],
+    emits: ["delete-task", "toggle-task"],
 };
 </script>
 
