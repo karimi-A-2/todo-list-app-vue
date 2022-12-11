@@ -26,14 +26,12 @@ export default {
     },
     methods: {
         deleteTask(id) {
-            this.tasks = this.tasks.filter((task) => task.id !== id)
+            this.tasks = this.tasks.filter((task) => task.id !== id);
         },
         toggleTask(id) {
-            this.tasks.forEach((task) => {
-                if (task.id === id) {
-                    task.reminder ^= true;
-                }
-            });
+            this.tasks = this.tasks.map((task) =>
+                task.id === id ? { ...task, reminder: !task.reminder } : task
+            );
         },
     },
     created() {
